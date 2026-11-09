@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INPESTZ | Links</title>
+<meta name="description" content="INPESTZ - Discord, donate, TikTok and Instagram links">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="INPESTZ">
+<meta property="og:description" content="Discord, donate, TikTok and Instagram links">
+<!-- For a nice share preview add: <meta property="og:image" content="https://YOUR-SITE/preview.jpg"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23000' stroke='%23fff' stroke-width='3'/%3E%3Ctext x='32' y='45' font-size='38' font-weight='800' text-anchor='middle' fill='%23fff' font-family='Arial'%3EI%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<noscript><style>#intro{display:none}.card,.ctrl{opacity:1!important}</style></noscript>
+</head>
+<body>
+
+<!-- Background video: put your own bg.mp4 (and optionally bg.webm) next to this file.
+     If no file is found the page simply uses the animated shader background. -->
+<video id="bgv" muted loop playsinline preload="auto" aria-hidden="true">
+  <source src="bg.webm" type="video/webm">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="shoot" id="shoot" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div class="ctrl">
+  <div class="lang glass" role="group" aria-label="Language">
+    <button type="button" data-lang="th">TH</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+  <button id="snd" class="icon-btn glass" type="button" aria-label="Sound" aria-pressed="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+      <path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/>
+      <path class="x" d="M17 9l5 6M22 9l-5 6"/>
+    </svg>
+  </button>
+</div>
+
+<main class="card">
+  <div class="stage">
+
+    <section class="profile glass">
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <!-- To use a profile picture: add <img src="avatar.jpg" alt=""> here -->
+          <div class="orbit"><b></b></div><div class="orbit r"><b></b></div>
+          <div class="ring"></div><div class="ring"></div>
+          <span>I</span>
+        </div>
+      </div>
+      <h1 data-t="INPESTZ">INPESTZ</h1>
+      <p class="tag" id="tag"></p>
+    </section>
+
+    <nav class="links left">
+      <a class="btn glass" data-name="Discord" data-meteor href="https://discord.gg/3JqPsfT2wr" target="_blank" rel="noopener noreferrer">
+        <span class="ripbox"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5 5.5C7 4.2 9 3.6 9.5 3.5l.6 1.2a14 14 0 0 1 3.8 0l.6-1.2c.5.1 2.5.7 4.5 2C20.5 9 21.5 13 21 17.5c-1.6 1.2-3.2 1.9-4.7 2.3l-1-1.6c.6-.2 1.1-.5 1.6-.8l-.3-.3a11 11 0 0 1-9.2 0l-.3.3c.5.3 1 .6 1.6.8l-1 1.6C5.7 19.4 4.1 18.7 2.5 17.5 2 13 3 9 5 5.5zM8.8 14.5c1 0 1.7-.9 1.7-1.9s-.7-1.9-1.7-1.9-1.7.9-1.7 1.9.7 1.9 1.7 1.9zm6.4 0c1 0 1.7-.9 1.7-1.9s-.7-1.9-1.7-1.9-1.7.9-1.7 1.9.7 1.9 1.7 1.9z" transform="translate(-.5 0)"/></svg>
+        <span class="label" data-i18n="discord">Join Discord</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="btn glass donate" data-name="Donate" data-meteor href="https://ezdn.app/inpestz" target="_blank" rel="noopener noreferrer">
+        <span class="ripbox"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.7 5 6.1 5c2 0 3.2 1.1 3.9 2.2C10.7 6.1 11.9 5 13.9 5c3.4 0 5.2 3.5 3.7 6.8C15.5 16.4 12 21 12 21z" transform="translate(1 0) scale(.95)"/></svg>
+        <span class="label" data-i18n="donate">Donate (Inpestz)</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </nav>
+
+    <nav class="links right">
+      <a class="btn glass" data-name="TikTok" href="https://www.tiktok.com/@inpestzxgod" target="_blank" rel="noopener noreferrer">
+        <span class="ripbox"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.2v13.1a2.8 2.8 0 1 1-2.8-2.8c.3 0 .6 0 .8.1V9a6 6 0 1 0 5.2 5.9V8.6a7.5 7.5 0 0 0 4.4 1.4V6.8a4.5 4.5 0 0 1-4.4-4.8z" transform="translate(-1 0)"/></svg>
+        <span class="label">TikTok</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="btn glass" data-name="Instagram" href="https://www.instagram.com/it_inpestz" target="_blank" rel="noopener noreferrer">
+        <span class="ripbox"></span>
+        <svg class="stroke" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        <span class="label">Instagram</span>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </nav>
+
+  </div>
+  <footer>&copy; <span id="y"></span> INPESTZ</footer>
+</main>
+
+<audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+<button id="mus" class="music glass off" type="button" aria-pressed="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span data-i18n="music">Music</span><b class="st"></b>
+</button>
+
+<div id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <div class="intro-name">INPESTZ</div>
+    <div class="intro-bar"><i></i></div>
+    <div class="intro-hint" data-i18n="skip">Click to skip</div>
+  </div>
+</div>
+
+<div id="go" aria-live="polite">
+  <div class="go-inner">
+    <div class="go-icon"><i class="go-ring"></i><span id="goIcon" aria-hidden="true"></span></div>
+    <div class="go-text"><span id="goText"></span><b class="dots" aria-hidden="true"></b></div>
+    <div class="go-bar"><i></i></div>
+  </div>
+</div>
+
+<div id="cur-ring" aria-hidden="true"></div>
+<div id="cur-dot" aria-hidden="true"></div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
